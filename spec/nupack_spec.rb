@@ -18,3 +18,11 @@ describe ProjectPricer do
     end
   end
 end
+
+describe FlatMarkup do
+  describe '.check' do
+    it 'returns true' do
+      expect(described_class.check(nil)).to be true
+    end
+  end
+end

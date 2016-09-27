@@ -14,3 +14,10 @@ class ProjectPricer
     1_591.58
   end
 end
+
+
+class FlatMarkup
+  def self.check(pricer)
+    true
+  end
+end
