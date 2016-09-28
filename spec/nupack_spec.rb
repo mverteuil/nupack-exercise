@@ -58,7 +58,7 @@ describe WorkerMarkup do
 
   describe '.apply' do
     it 'charges 1.2% of the base price per worker' do
-      expect(described_class.apply(project_with_worker)).to eq(120.00)
+      expect(described_class.apply(project_with_worker)).to eq(1.20)
     end
   end
 end

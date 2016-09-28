@@ -33,7 +33,7 @@ class WorkerMarkup
   end
 
   def self.apply(pricer)
-    pricer.base_price * (pricer.num_workers * 1.2)
+    pricer.base_price * (pricer.num_workers * 0.012)
   end
 end
 
