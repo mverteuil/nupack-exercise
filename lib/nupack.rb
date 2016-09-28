@@ -50,6 +50,6 @@ class MaterialMarkup
   end
 
   def self.apply(pricer)
-    
+    pricer.base_price * MATERIAL_MARKUPS[pricer.material.intern]
   end
 end

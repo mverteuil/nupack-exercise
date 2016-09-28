@@ -101,18 +101,18 @@ describe MaterialMarkup do
   describe '.apply' do
     context 'project has drugs' do 
       it 'charges 7.5% of the base price' do
-        expect(described_class.check(project_with_drugs)).to eq(7.50)
+        expect(described_class.apply(project_with_drugs)).to eq(7.50)
       end
     end
 
     context 'project has food' do 
       it 'charges 13% of the base price' do
-        expect(described_class.check(project_with_food)).to eq(13.00)
+        expect(described_class.apply(project_with_food)).to eq(13.00)
       end
     end
     context 'project has electronics' do 
       it 'charges 2% of the base price' do
-        expect(described_class.check(project_with_electronics)).to eq(2.00)
+        expect(described_class.apply(project_with_electronics)).to eq(2.00)
       end
     end
   end
