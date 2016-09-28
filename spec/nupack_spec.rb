@@ -35,3 +35,30 @@ describe FlatMarkup do
     end
   end
 end
+
+describe WorkerMarkup do
+  # Example project with $100.00, 1 worker and derp category
+  project_with_worker = ProjectPricer.new(100.00, 1, 'derp')
+  # Example project with $100.00, no workers and derp category
+  project_without_worker = ProjectPricer.new(100.00, 0, 'derp')
+
+  describe '.check' do
+    context 'has at least one worker' do 
+      it 'returns true' do
+        expect(described_class.check(project_with_worker)).to be true
+      end
+    end
+
+    context 'has no workers' do 
+      it 'returns false' do
+        expect(described_class.check(project_without_worker)).to be false
+      end
+    end
+  end
+
+  describe '.apply' do
+    it 'charges 1.2% of the base price per worker' do
+      expect(described_class.apply(project_with_worker)).to eq(120.00)
+    end
+  end
+end

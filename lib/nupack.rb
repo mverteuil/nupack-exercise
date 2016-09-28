@@ -25,3 +25,14 @@ class FlatMarkup
     pricer.base_price * 0.05
   end
 end
+
+
+class WorkerMarkup
+  def self.check(pricer)
+    pricer.num_workers > 0
+  end
+
+  def self.apply(pricer)
+    pricer.base_price * (pricer.num_workers * 1.2)
+  end
+end
