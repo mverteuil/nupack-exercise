@@ -86,11 +86,13 @@ describe MaterialMarkup do
         expect(described_class.check(project_with_food)).to be true
       end
     end
+
     context 'project has electronics' do 
       it 'returns true' do
         expect(described_class.check(project_with_electronics)).to be true
       end
     end
+
     context 'has a material that does not match' do 
       it 'returns false' do
         expect(described_class.check(project_without_match)).to be false
@@ -110,6 +112,7 @@ describe MaterialMarkup do
         expect(described_class.apply(project_with_food)).to eq(13.00)
       end
     end
+
     context 'project has electronics' do 
       it 'charges 2% of the base price' do
         expect(described_class.apply(project_with_electronics)).to eq(2.00)
