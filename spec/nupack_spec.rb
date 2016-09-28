@@ -75,11 +75,11 @@ describe MaterialMarkup do
   # Example project with $100.00, 1 worker and derp material
   project_without_match = ProjectPricer.new(100.00, 1, 'derp')
   # Example project with $100.00, 1 worker and drugs material
-  project_with_drugs = ProjectPricer.new(100.00, 0, 'drugs')
+  project_with_drugs = ProjectPricer.new(100.00, 1, 'drugs')
   # Example project with $100.00, 1 worker and electronics material
-  project_with_electronics = ProjectPricer.new(100.00, 0, 'electronics')
+  project_with_electronics = ProjectPricer.new(100.00, 1, 'electronics')
   # Example project with $100.00, 1 worker and food material
-  project_with_food = ProjectPricer.new(100.00, 0, 'food')
+  project_with_food = ProjectPricer.new(100.00, 1, 'food')
 
   describe '.check' do
     context 'project has drugs' do 
