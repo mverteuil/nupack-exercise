@@ -1,4 +1,10 @@
 # vim: sw=2 ts=2 et
+MATERIAL_MARKUPS = {
+  "drugs": 0.075,
+  "electronics": 0.02,
+  "food": 0.13,
+}
+
 class ProjectPricer
   attr_reader :base_price
   attr_reader :num_workers
@@ -40,10 +46,10 @@ end
 
 class MaterialMarkup
   def self.check(pricer)
-    ['drugs', 'electronics', 'food'].include? pricer.material
+    MATERIAL_MARKUPS.keys.include? pricer.material.intern
   end
 
   def self.apply(pricer)
-    0
+    
   end
 end
