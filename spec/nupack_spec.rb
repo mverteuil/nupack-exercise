@@ -31,7 +31,7 @@ describe FlatMarkup do
 
   describe '.apply' do
     it 'adds 5% to the base price' do
-      expect(described_class.apply(example_project)).to eq(105.00)
+      expect(described_class.apply(example_project)).to eq(5.00)
     end
   end
 end

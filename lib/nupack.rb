@@ -22,6 +22,6 @@ class FlatMarkup
   end
 
   def self.apply(pricer)
-    0
+    pricer.base_price * 0.05
   end
 end
