@@ -16,6 +16,13 @@ describe ProjectPricer do
         expect(pricer.calculate).to eq(6_199.81)
       end
     end
+
+    context 'with $12,456.95, 4 people and books' do
+      pricer = described_class.new 12_456.95, 4, 'books'
+      it 'returns $13,707.63' do
+        expect(pricer.calculate).to eq(13_707.63)
+      end
+    end
   end
 end
 
