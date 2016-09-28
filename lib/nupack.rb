@@ -40,7 +40,7 @@ end
 
 class MaterialMarkup
   def self.check(pricer)
-    true
+    ['drugs', 'electronics', 'food'].include? pricer.material
   end
 
   def self.apply(pricer)
