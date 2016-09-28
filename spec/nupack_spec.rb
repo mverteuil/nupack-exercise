@@ -62,3 +62,39 @@ describe WorkerMarkup do
     end
   end
 end
+
+
+describe MaterialMarkup do
+  # Example project with $100.00, 1 worker and derp material
+  project_without_match = ProjectPricer.new(100.00, 1, 'derp')
+  # Example project with $100.00, 1 worker and drugs material
+  project_with_drugs = ProjectPricer.new(100.00, 0, 'drugs')
+  # Example project with $100.00, 1 worker and electronics material
+  project_with_electronics = ProjectPricer.new(100.00, 0, 'electronics')
+  # Example project with $100.00, 1 worker and food material
+  project_with_food = ProjectPricer.new(100.00, 0, 'food')
+
+  describe '.check' do
+    context 'project has drugs' do 
+      it 'returns true' do
+        expect(described_class.check(project_with_drugs)).to be true
+      end
+    end
+
+    context 'project has food' do 
+      it 'returns true' do
+        expect(described_class.check(project_with_food)).to be true
+      end
+    end
+    context 'project has electronics' do 
+      it 'returns true' do
+        expect(described_class.check(project_with_electronics)).to be true
+      end
+    end
+    context 'has a material that does not match' do 
+      it 'returns false' do
+        expect(described_class.check(project_without_match)).to be false
+      end
+    end
+  end
+end

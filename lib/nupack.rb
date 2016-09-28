@@ -36,3 +36,14 @@ class WorkerMarkup
     pricer.base_price * (pricer.num_workers * 1.2)
   end
 end
+
+
+class MaterialMarkup
+  def self.check(pricer)
+    true
+  end
+
+  def self.apply(pricer)
+    0
+  end
+end
