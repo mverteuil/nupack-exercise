@@ -20,7 +20,7 @@ describe ProjectPricer do
 end
 
 describe FlatMarkup do
-  # Example project with $100.00, 1 worker and derp category
+  # Example project with $100.00, 1 worker and derp material
   example_project = ProjectPricer.new(100.00, 1, 'derp')
 
   describe '.check' do
@@ -37,9 +37,9 @@ describe FlatMarkup do
 end
 
 describe WorkerMarkup do
-  # Example project with $100.00, 1 worker and derp category
+  # Example project with $100.00, 1 worker and derp material
   project_with_worker = ProjectPricer.new(100.00, 1, 'derp')
-  # Example project with $100.00, no workers and derp category
+  # Example project with $100.00, no workers and derp material
   project_without_worker = ProjectPricer.new(100.00, 0, 'derp')
 
   describe '.check' do
