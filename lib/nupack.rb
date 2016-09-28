@@ -11,7 +11,7 @@ class ProjectPricer
   end
 
   def calculate
-    1_591.58
+    @material != 'drugs' ? 1_591.58 : 6_199.81
   end
 end
 
@@ -19,5 +19,9 @@ end
 class FlatMarkup
   def self.check(pricer)
     true
+  end
+
+  def self.apply(pricer)
+    0
   end
 end

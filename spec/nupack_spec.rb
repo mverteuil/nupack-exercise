@@ -20,9 +20,18 @@ describe ProjectPricer do
 end
 
 describe FlatMarkup do
+  # Example project with $100.00, 1 worker and derp category
+  example_project = ProjectPricer.new(100.00, 1, 'derp')
+
   describe '.check' do
     it 'returns true' do
-      expect(described_class.check(nil)).to be true
+      expect(described_class.check(example_project)).to be true
+    end
+  end
+
+  describe '.apply' do
+    it 'adds 5% to the base price' do
+      expect(described_class.apply(example_project)).to eq(105.00)
     end
   end
 end
